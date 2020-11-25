@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class date</title>
+</head>
+<body>
+<script>
+    let MyDate = function (day,month,year){
+        this.day=day;
+        this.month=month;
+        this.year=year;
+        this.getDay =function (){
+            return this.day;
+        };
+        this.getMonth=function (){
+            return this.month;
+        };
+        this.getYear=function (){
+            return this.year;
+        };
+        this.setDay=function (day){
+            return this.day=day;
+        };
+        this.setMonth=function (month){
+            return this.month=month;
+        };
+        this.setYear=function (year){
+           return this.year=year;
+        };
+    }
+    let date = new MyDate(20,10,2020);
+    document.write(date.getDay()+"/"+date.getMonth()+"/"+date.getYear()+"<br>");
+    date.setDay(25);
+    date.setMonth(11);
+    date.setYear(2020);
+    document.write(date.getDay()+"/"+date.getMonth()+"/"+date.getYear()+"<br>");
+    MyDate.prototype.setDate=function (day,month,year){
+         this.day=day;
+         this.month=month;
+         this.year=year;
+    };
+    MyDate.prototype.toString=function (){
+        return this.getDay() +"/"+this.getMonth()+"/"+this.getYear()
+    };
+    date.setDate(1,12,2020);
+    document.write(date.toString());
+
+
+
+
+</script>
+</body>
+</html>
